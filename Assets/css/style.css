@@ -1,16 +1,20 @@
+/* Styling for the Code Quiz Intro Jumbotron */
 #intro {
 background-color: white;
 text-align: center;
 }
 
+/* Styling for the h1 element in the Code Quiz Intro Jumbotron */
 .display-4 {
     font-size: 3rem;
 }
 
+/* Styling for the Start button in the Code Quiz Intro Jumbotron */
 #start {
     padding: 10px 50px;
 }
 
+/* Styling for all buttons with the .btn class */
 .btn, .btn:focus, .btn:hover, .btn:active {
     color: white;
     background-color: indigo;
@@ -19,23 +23,28 @@ text-align: center;
     box-shadow: none;
 }
 
+/* Styling to remove the border from all cards */
 .card {
     border: none;
 }
 
+/* Styling to hide the Questions Content Card by default */
 #questions {
     display: none;
 }
 
+/* Styling to align all of the buttons to the left in the div for the buttons used to answer each question */
 .question-btn-container {
     text-align: left;
 }
 
+/* Styling for the buttons used to answer each question */
 .question-btn {
     margin-top: 2.5px;
     margin-bottom: 2.5px;
 }
 
+/* Styling for the button to submit the player's initials */
 .submit-btn {
     padding-top: .17rem;
     padding-bottom: .17rem;
@@ -43,22 +52,27 @@ text-align: center;
     margin-left: .21rem;
 }
 
+/* Styling for the div where the player is notified if the answer is correct or wrong */
 .response {
     display: none;
 }
 
+/* Styling for the card containing the Code Quiz player's score result */
 #result{
     display:none;
 }
 
+/* Styling for the card containing the highscores content */
 #scores {
     display: none;
 }
 
+/* Styling for the leaderboard ordered list which shows all of the players' highscores */
 #leaderBoard{
     margin-bottom: 10px;
 }
 
+/* Styling for each score entry in the leaderboard ordered list */
 .score{
     list-style-position: inside;
     background-color: #E1DAED;
