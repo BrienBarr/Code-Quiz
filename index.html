@@ -7,18 +7,16 @@
         <link rel="stylesheet" type="text/css" href="Assets/css/style.css">
     </head>
     <body>
-        <header id="header">
-            <navbar class="navbar">
+        <nav class="navbar">
             <ul class="nav float-left">
                 <li class="nav-item">
-                  <a class="nav-link active" href="" id="viewScores">View High Scores</a>
+                    <a class="nav-link active" href="" id="viewScores">View High Scores</a>
                 </li>
             </ul>
             <div class="time float-right justify-content-end">
                 Time: <span id="time-display"></span>
             </div>
-            </navbar>
-        </header>
+        </nav>
         <hr id="hr">
         <div class="container">
             <div class="row">
@@ -31,56 +29,49 @@
                             Keep in mind that incorrect answers will penalize your scoretime by 10 seconds.
                         </p>
                         <p class="lead">
-                          <a class="btn btn-primary btn-lg" href="#" role="button" id="start">Start</a>
+                            <a class="btn btn-primary btn-lg" href="#" role="button" id="start">Start</a>
                         </p>
-                      </div>
+                    </div>
                     <div class="card text-center"  id="questions">
                         <div class="card-body">
-                            <h2 class="card-title" id="questionTxt">Special title treatment</h2>
+                            <h2 class="card-title" id="questionTxt">Question</h2>
                             <div class="question-btn-container" id="buttons">
-                                <button class="btn btn-primary question-btn left-aligned" id="btn1" value="1">Go somewhere</button><br>
-                                <button class="btn btn-primary question-btn left-aligned" id="btn2" value="2">Go somewhere</button><br>
-                                <button class="btn btn-primary question-btn left-aligned" id="btn3" value="3">Go somewhere</button><br>
-                                <button class="btn btn-primary question-btn left-aligned" id="btn4" value="4">Go somewhere</button><br>
+                                <button class="btn btn-primary question-btn left-aligned" id="btn1" value="1">Choice 1</button><br>
+                                <button class="btn btn-primary question-btn left-aligned" id="btn2" value="2">Choice 2</button><br>
+                                <button class="btn btn-primary question-btn left-aligned" id="btn3" value="3">Choice 3</button><br>
+                                <button class="btn btn-primary question-btn left-aligned" id="btn4" value="4">Choice 4</button><br>
                             </div>
                         </div>
-                        <div class="card-footer text-muted" id="response">
-                        2 days ago
+                        <div class="card-footer text-muted response">
+                        
                         </div>
                     </div>
                     <div class="card" id="result">
                         <div class="card-body">
-                        <h3 class="card-title">All done!</h3>
-                        <p class="card-text">You got <span id="userCorrect"></span> out of 5 questions correct.</p>
-                        <p class="card-text">Your final score is <span id="userScore"></span>.</p>
-                        <p class="card-text">Enter Initials: <input type="text" id="initials"> <button class="btn btn-primary submit-btn" id="submit">Submit</button></p>
+                            <h3 class="card-title">All done!</h3>
+                            <p class="card-text">You got <span id="userCorrect"></span> out of 5 questions correct.</p>
+                            <p class="card-text">Your final score is <span id="userScore"></span>.</p>
+                            <p class="card-text">Enter Initials: <input type="text" id="initials"> <button class="btn btn-primary submit-btn" id="submit">Submit</button></p>
                         </div>
-                        <div class="card-footer text-muted" id="response">
-                        2 days ago
+                        <div class="card-footer text-muted response">
+                        
                         </div>
                     </div>
                     <div class="card" id="scores">
                         <div class="card-body">
-                        <h3 class="card-title">Highscores</h3>
-                        <ol class="list-group" id="leaderBoard">
-                        </ol>
-                        <p>
-                        <button class="btn btn-primary" id="back">Go Back</button>
-                        <button class="btn btn-primary" id="clear">Clear Highscores</button>
-                        </p>
-                        </div>
-                        <div class="card-footer text-muted" id="response">
-                        2 days ago
+                            <h3 class="card-title">Highscores</h3>
+                            <ol class="list-group" id="leaderBoard">
+                            </ol>
+                            <p>
+                                <button class="btn btn-primary" id="back">Go Back</button>
+                                <button class="btn btn-primary" id="clear">Clear Highscores</button>
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3"></div>
             </div>
         </div>
-
-        <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
         <script src="./Assets/script.js"></script>
     </body>
 </html>

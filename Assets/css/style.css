@@ -1,9 +1,3 @@
-/* .time {
-    width: 40%;
-    padding-top: 8px;
-    padding-right: 40px;
-} */
-
 #intro {
 background-color: white;
 text-align: center;
@@ -46,10 +40,9 @@ text-align: center;
     padding-bottom: .17rem;
     margin-top: 0;
     margin-left: .21rem;
-    /* position: fixed; */
 }
 
-#response {
+.response {
     display: none;
 }
 

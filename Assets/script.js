@@ -14,13 +14,14 @@ var btn2 = document.getElementById("btn2");
 var btn3 = document.getElementById("btn3");
 var btn4 = document.getElementById("btn4");
 var buttons = document.getElementById("buttons");
-var response = document.getElementById("response");
+var response = document.querySelector(".response");
 var timeDisplay = document.getElementById("time-display");
 var leaderBoard = document.getElementById("leaderBoard");
 var backBtn = document.getElementById("back");
 var clearBtn = document.getElementById("clear");
-var header = document.getElementById("header");
+var navbar = document.querySelector(".navbar");
 var hr = document.getElementById("hr");
+
 var questionSet = [
     {
         "question": "Commonly used data types DO NOT include:",
@@ -63,6 +64,7 @@ var questionSet = [
         "answer": "4",
     }
 ];
+
 var questionAsked = [];
 var i = 0;
 var guess;
@@ -74,42 +76,16 @@ var userInitials;
 var userScore;
 
 function getQuestion (){
-    //if (questionAsked.length === questionSet.length){
-        //console.log(i===questionSet.length);
     if (i === questionSet.length){
-        //clearInterval(timerInterval);
         showFinalResults();
         return;
     }
-
-    // i = Math.floor(Math.random() * questionSet.length);
-    
-    //console.log(i);
-    //console.log("Index of i in questions asked: " + questionAsked.indexOf(i));
-    //checkAsked();
     questionTxt.textContent = questionSet[i].question;
     btn1.textContent = questionSet[i].button1;
     btn2.textContent = questionSet[i].button2;
     btn3.textContent = questionSet[i].button3;
     btn4.textContent = questionSet[i].button4;
-    //questionAsked.push(i);
-    
 }
-
-// function checkAsked (){
-//     if (questionAsked.indexOf(i)<0){
-//         questionTxt.textContent = questionSet[i].question;
-//         btn1.textContent = questionSet[i].button1;
-//         btn2.textContent = questionSet[i].button2;
-//         btn3.textContent = questionSet[i].button3;
-//         btn4.textContent = questionSet[i].button4;
-//         questionAsked.push(i);
-//         console.log(questionAsked);
-//     }
-//     else{
-//         getQuestion();
-//     }
-// }
 
 function checkAnswer(guess){
     if (guess === questionSet[i].answer){
@@ -125,13 +101,11 @@ function checkAnswer(guess){
         response.textContent = "Wrong!"
         secondsLeft = secondsLeft - 10;
         showResult();
-        
         getQuestion();
         if (i === questionSet.length){
             return;
         }
         startTimer(secondsLeft);
-
     }
 }
 
@@ -144,9 +118,7 @@ function showResult(){
             clearInterval(timer);
             response.style.display = "none";
         }
-
     }, 1000);
-
 }
 
 function showFinalResults(){
@@ -155,14 +127,8 @@ function showFinalResults(){
     if (correct === 0){
         secondsLeft = 0;
         timeDisplay.textContent = secondsLeft;
-        //clearInterval(timerInterval);
         score.textContent = "0";
-    }
-    // else{
-    //     console.log(secondsLeft);
-    //     score.textContent = secondsLeft;
-    // }
-    
+    }    
     intro.style.display = "none";
     questions.style.display = "none";    
     scores.style.display = "none";
@@ -184,15 +150,13 @@ function getScores(){
 function showScores(){
     getScores();
         for (s=0; s<highscores.length; s++){
-            //var scoreNum = s+1;
             var scoreInitials = highscores[s].initials;
             var scoreSaved = highscores[s].score;
             var scoreEntry = document.createElement("li");
             scoreEntry.textContent = scoreInitials + " - " + scoreSaved; 
-            //scoreEntry.textContent = scoreNum + ". " + scoreInitials + " - " + scoreSaved;
             leaderBoard.appendChild(scoreEntry);
         }
-    header.style.visibility = "hidden";
+    navbar.style.visibility = "hidden";
     hr.style.visibility = "hidden";
     intro.style.display = "none";
     questions.style.display = "none";
@@ -201,22 +165,18 @@ function showScores(){
 }
 
 function startTimer (secondsLeft){
-    timerInterval = setInterval(time, 1000);
+    timerInterval = setInterval(function () {
+        secondsLeft--;
+        timeDisplay.textContent = secondsLeft; 
+        score.textContent = secondsLeft; 
+        if(secondsLeft === 0) {
+            score.textContent = "0";
+            clearInterval(timerInterval);
+            showFinalResults();
+            return;
+        }
+    }, 1000);
 }
-
-function time() {
-    secondsLeft--;
-    timeDisplay.textContent = secondsLeft; 
-    score.textContent = secondsLeft; 
-    if(secondsLeft === 0) {
-        score.textContent = "0";
-        clearInterval(timerInterval);
-        showFinalResults();
-        return;
-    }
-    //return(secondsLeft);
-
-  }
 
 viewScores.addEventListener("click", function(event){
     event.preventDefault();
@@ -238,7 +198,6 @@ buttons.addEventListener("click", function (event){
     if(event.target.matches("button")){
         event.preventDefault();
         guess = event.target.value;
-        //console.log(guess);
         checkAnswer(guess);
     }
 })
