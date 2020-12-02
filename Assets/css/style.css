@@ -11,7 +11,7 @@ text-align: center;
     padding: 10px 50px;
 }
 
-.btn, .btn:focus {
+.btn, .btn:focus, .btn:hover {
     background-color: indigo;
     border-color: mediumpurple;
     outline: none;
