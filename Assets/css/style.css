@@ -11,7 +11,8 @@ text-align: center;
     padding: 10px 50px;
 }
 
-.btn, .btn:focus, .btn:hover {
+.btn, .btn:focus, .btn:hover, .btn:active {
+    color: white;
     background-color: indigo;
     border-color: mediumpurple;
     outline: none;
@@ -36,6 +37,7 @@ text-align: center;
 }
 
 .submit-btn {
+    height: 30px;
     padding-top: .17rem;
     padding-bottom: .17rem;
     margin-top: 0;
@@ -60,6 +62,6 @@ text-align: center;
 
 .score{
     list-style-position: inside;
-    background-color: #eee;
+    background-color: #E1DAED;
     margin-bottom: 2px;
 }
