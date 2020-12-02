@@ -1,3 +1,4 @@
+// Assignment Code
 var start = document.getElementById("start");
 var intro = document.getElementById("intro");
 var questions = document.getElementById("questions");
@@ -22,6 +23,9 @@ var clearBtn = document.getElementById("clear");
 var navbar = document.querySelector(".navbar");
 var hr = document.getElementById("hr");
 
+// Declaration of global variables
+
+// Declaring all of the questions asked in the quiz
 var questionSet = [
     {
         "question": "Commonly used data types DO NOT include:",
@@ -74,6 +78,7 @@ var highscores = [];
 var userInitials;
 var userScore;
 
+// Function to get each question and fill in the content on the Question Content Card
 function getQuestion (){
     if (i === questionSet.length){
         clearInterval(timerInterval);
@@ -87,6 +92,7 @@ function getQuestion (){
     btn4.textContent = questionSet[i].button4;
 }
 
+// Function to check the player's guess (i.e. which button was clicked) against the answer for the question
 function checkAnswer(guess){
     if (guess === questionSet[i].answer){
         correct++;
@@ -105,6 +111,7 @@ function checkAnswer(guess){
     }
 }
 
+// Function to show whether the player's answer was correct or wrong in the response area
 function showResult(){
     response.style.display = "block";
     var countdown = 1;
@@ -117,6 +124,7 @@ function showResult(){
     }, 1000);
 }
 
+//Function to show the player's final quiz score in the card for the Results Content
 function showFinalResults(){
     clearInterval(timerInterval);
     userCorrect.textContent = correct;
@@ -131,6 +139,7 @@ function showFinalResults(){
     result.style.display = "block";
 }
 
+//Function to get the highscores stored in the local storage
 function getScores(){
     highscores = JSON.parse(localStorage.getItem("highscores"));
     console.log(highscores);
@@ -143,6 +152,7 @@ function getScores(){
     }
 }
 
+//Function to show the Scores Content Card and populate the leaderboard with the highscores stored in local storage
 function showScores(){
     getScores();
         for (s=0; s<highscores.length; s++){
@@ -161,10 +171,12 @@ function showScores(){
     scores.style.display = "block";
 }
 
+//Function to start the quiz timer
 function startTimer (secondsLeft){
     timerInterval = setInterval(timer, 1000);
 }
 
+//Function for the quiz timer setInterval callback function
 function timer () {
     secondsLeft--;
     timeDisplay.textContent = secondsLeft; 
@@ -177,12 +189,14 @@ function timer () {
     }
 }
 
+//Click event handler for the View Scores link in the Navbar
 viewScores.addEventListener("click", function(event){
     event.preventDefault();
     clearInterval(timerInterval);
     showScores();
 })
 
+//Click event handler for the Start button to start the quiz
 start.addEventListener("click", function (event){
     event.preventDefault();
     getScores();
@@ -193,6 +207,7 @@ start.addEventListener("click", function (event){
     startTimer(secondsLeft);
 })
 
+//Click event handler for the multiple choice answer buttons in the Questions Content Card
 buttons.addEventListener("click", function (event){
     if(event.target.matches("button")){
         event.preventDefault();
@@ -201,6 +216,7 @@ buttons.addEventListener("click", function (event){
     }
 })
 
+//Click event handler for the submit button for the player to store his/her initials and score
 submitBtn.addEventListener("click", function (event){
     event.preventDefault();
     userInitials = initials.value.trim();
@@ -219,11 +235,13 @@ submitBtn.addEventListener("click", function (event){
     showScores();
 })
 
+//Click event handler for the Go Back button on the highscores content card
 backBtn.addEventListener("click", function(event){
     event.preventDefault();
     window.location.reload();
 })
 
+//Click event handler for the Clear button on the highscores content card
 clearBtn.addEventListener("click", function(event){
     event.preventDefault();
     localStorage.removeItem("highscores");
