@@ -53,3 +53,13 @@ text-align: center;
 #scores {
     display: none;
 }
+
+#leaderBoard{
+    margin-bottom: 10px;
+}
+
+.score{
+    list-style-position: inside;
+    background-color: #eee;
+    margin-bottom: 2px;
+}
