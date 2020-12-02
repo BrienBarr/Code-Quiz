@@ -204,6 +204,10 @@ buttons.addEventListener("click", function (event){
 submitBtn.addEventListener("click", function (event){
     event.preventDefault();
     userInitials = initials.value.trim();
+    if (userInitials === ""){
+        alert("Please enter your initials.");
+        return;
+    }
     console.log(userInitials);
     userScore = secondsLeft;
     console.log(userScore);
