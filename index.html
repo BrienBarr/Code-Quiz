@@ -3,10 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <title>Code Quiz</title>
+        <!-- Link to Bootstrap Stylesheet -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Link to Custom Stylesheet -->
         <link rel="stylesheet" type="text/css" href="Assets/css/style.css">
     </head>
     <body>
+
+        <!-- Navbar -->
         <nav class="navbar">
             <ul class="nav float-left">
                 <li class="nav-item">
@@ -17,11 +21,16 @@
                 Time: <span id="time-display"></span>
             </div>
         </nav>
+
         <hr id="hr">
+
+        <!-- Main Content Container -->
         <div class="container">
             <div class="row">
                 <div class="col-lg-3"></div>
                 <div class="col-lg-6">
+
+                    <!-- Code Quiz Introduction Content -->
                     <div class="jumbotron" id="intro">
                         <h1 class="display-4"><strong>Code Quiz Challenge</strong></h1>
                         <p>
@@ -32,6 +41,8 @@
                             <a class="btn btn-lg" href="#" role="button" id="start">Start</a>
                         </p>
                     </div>
+
+                    <!-- Card for Questions Content -->
                     <div class="card text-center"  id="questions">
                         <div class="card-body">
                             <h2 class="card-title" id="questionTxt">Question</h2>
@@ -46,6 +57,8 @@
                         
                         </div>
                     </div>
+
+                    <!-- Card for Quiz Score Result Content -->
                     <div class="card" id="result">
                         <div class="card-body">
                             <h3 class="card-title">All done!</h3>
@@ -60,6 +73,8 @@
                         
                         </div>
                     </div>
+
+                    <!-- Card for Highscores Content -->
                     <div class="card" id="scores">
                         <div class="card-body">
                             <h3 class="card-title">Highscores</h3>
@@ -71,10 +86,13 @@
                             </p>
                         </div>
                     </div>
+
                 </div>
                 <div class="col-lg-3"></div>
             </div>
         </div>
+        
+        <!-- Link to custom Javascript file -->
         <script src="./Assets/script.js"></script>
     </body>
 </html>
