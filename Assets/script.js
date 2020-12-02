@@ -65,7 +65,6 @@ var questionSet = [
     }
 ];
 
-var questionAsked = [];
 var i = 0;
 var guess;
 var correct = 0;
@@ -77,8 +76,9 @@ var userScore;
 
 function getQuestion (){
     if (i === questionSet.length){
+        clearInterval(timerInterval);
         showFinalResults();
-        return;
+        return (secondsLeft);
     }
     questionTxt.textContent = questionSet[i].question;
     btn1.textContent = questionSet[i].button1;
@@ -96,16 +96,12 @@ function checkAnswer(guess){
         getQuestion();
     }
     else{
-        clearInterval(timerInterval);
         i++;
         response.textContent = "Wrong!"
         secondsLeft = secondsLeft - 10;
+        console.log("Seconds Left: "+secondsLeft);
         showResult();
         getQuestion();
-        if (i === questionSet.length){
-            return;
-        }
-        startTimer(secondsLeft);
     }
 }
 
@@ -165,17 +161,19 @@ function showScores(){
 }
 
 function startTimer (secondsLeft){
-    timerInterval = setInterval(function () {
-        secondsLeft--;
-        timeDisplay.textContent = secondsLeft; 
-        score.textContent = secondsLeft; 
-        if(secondsLeft === 0) {
-            score.textContent = "0";
-            clearInterval(timerInterval);
-            showFinalResults();
-            return;
-        }
-    }, 1000);
+    timerInterval = setInterval(timer, 1000);
+}
+
+function timer () {
+    secondsLeft--;
+    timeDisplay.textContent = secondsLeft; 
+    score.textContent = secondsLeft; 
+    if(secondsLeft === 0) {
+        score.textContent = "0";
+        clearInterval(timerInterval);
+        showFinalResults();
+        return;
+    }
 }
 
 viewScores.addEventListener("click", function(event){
