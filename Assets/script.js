@@ -149,6 +149,7 @@ function showScores(){
             var scoreInitials = highscores[s].initials;
             var scoreSaved = highscores[s].score;
             var scoreEntry = document.createElement("li");
+            scoreEntry.setAttribute("class", "score");
             scoreEntry.textContent = scoreInitials + " - " + scoreSaved; 
             leaderBoard.appendChild(scoreEntry);
         }
